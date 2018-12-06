@@ -1,0 +1,6 @@
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\UniversityTermTimeService\UniversityTermTimeService\bin\UniversityTermTimeService.dll.config
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\UniversityTermTimeService\UniversityTermTimeService\bin\UniversityTermTimeService.dll
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\UniversityTermTimeService\UniversityTermTimeService\bin\UniversityTermTimeService.pdb
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\UniversityTermTimeService\UniversityTermTimeService\obj\Release\UniversityTermTimeService.csproj.CoreCompileInputs.cache
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\UniversityTermTimeService\UniversityTermTimeService\obj\Release\UniversityTermTimeService.dll
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\UniversityTermTimeService\UniversityTermTimeService\obj\Release\UniversityTermTimeService.pdb

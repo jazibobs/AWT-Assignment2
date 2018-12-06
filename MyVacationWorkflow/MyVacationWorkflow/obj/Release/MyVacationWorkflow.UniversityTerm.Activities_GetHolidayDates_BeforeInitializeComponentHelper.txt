@@ -1,0 +1,2 @@
+MyVacationWorkflow.UniversityTerm.IUniversityTermTimes.GetHolidayDates.g.xaml
+XamlStaticHelperNamespace._XamlStaticHelper

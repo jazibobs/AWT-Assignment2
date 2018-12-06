@@ -1,0 +1,6 @@
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\HolidayBrokerService\HolidayBrokerService\bin\HolidayBrokerService.dll.config
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\HolidayBrokerService\HolidayBrokerService\bin\HolidayBrokerService.dll
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\HolidayBrokerService\HolidayBrokerService\bin\HolidayBrokerService.pdb
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\HolidayBrokerService\HolidayBrokerService\obj\Release\HolidayBrokerService.csproj.CoreCompileInputs.cache
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\HolidayBrokerService\HolidayBrokerService\obj\Release\HolidayBrokerService.dll
+C:\Users\Jared\OneDrive - DHSZ\Leicester\Advanced Web Technologies\awt-assignment2\HolidayBrokerService\HolidayBrokerService\obj\Release\HolidayBrokerService.pdb

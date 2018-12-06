@@ -1,0 +1,7 @@
+obj\Debug\_MyVacationWorkflow.g.cs
+obj\Debug\MyVacationWorkflow.AirportTransfer.IAirportTransfer.GetCheapestTravelOption.g.cs
+obj\Debug\MyVacationWorkflow.HolidayBroker.IHolidayBroker.GetHolidayOptions.g.cs
+obj\Debug\MyVacationWorkflow.UniversityTerm.IUniversityTermTimes.GetHolidayDates.g.cs
+obj\Debug\MyVacationWorkflow.AirportTransfer.Activities_GetCheapestTravelOption_BeforeInitializeComponentHelper.cs
+obj\Debug\MyVacationWorkflow.HolidayBroker.Activities_GetHolidayOptions_BeforeInitializeComponentHelper.cs
+obj\Debug\MyVacationWorkflow.UniversityTerm.Activities_GetHolidayDates_BeforeInitializeComponentHelper.cs

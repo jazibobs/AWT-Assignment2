@@ -1,0 +1,57 @@
+Tasks attempted:
+
+1a) Process diagram included in the base directory:
+	- AWT-A02 - MyVacation.svg
+	- AWT-A02 - MyVacation.pdf
+
+1b) Process and service interfaces:
+	
+	MyVacationWorkflow:
+	GetStudentDataRequest
+	Interface String[] GetCheapestHoliday(string university, string timeOfYear, Int32 budget, Int64 ccNumber);
+	Returns 4 parameters bookingPrice (the total cost of holiday and transfer), bookingRef (a booking reference number),
+	bookingItinerary (a full list of information needed for the trip), bookingDetails (additional information, used for
+	explaining when the booking process can't find a suitable holiday)
+
+	UniversityTermTimeService:
+	Interface List<DateTime> GetHolidayDates(string university, string timeOfYear);
+	Returns a list of 2 DateTime objects, the first of which is the day the University closes for
+	vacation and the second is when term begins again
+
+	HolidayBrokerService:
+	Interface List<Holiday> GetHolidayOptions(DateTime startDate, DateTime endDate, int budget);
+	Returns a list of Holiday objects which contains all information relevant to the package holiday
+
+	AirportTransferService:
+	Interface TravelOption GetCheapestTravelOption(string originCity, string destinationCity);
+	Returns a TravelOption object which contains a mode of traffic for traveling from University to
+	the airport and what the cost of the transfer would be
+
+2) All 3 partner services implemented as C# services, relevant project directories are:
+	- AirportTransferService
+	- HolidayBrokerService
+	- UniversityTermTimeService
+
+3) Implementation of the designed process from 1a) as a WCF Workflow Service, project directory is:
+	- MyVacationWorkflow
+
+4) As each servive was build as a separate Visual Studio project getting preparing each service is as simple as 
+right-clicking the project name and selecting "Publish..." and following the publishing wizard to deploy each one
+as a Microsoft Azure App Service at a domain name of your choice.
+
+Once the 3 external services are uploaded to Azure they can be referenced in my MyVacationWorkflow project as
+"Connected Services". In the Solution Explorer I right-clicked on "References" and selected 
+"Add Service Reference". The 3 external services in my example use the following URLs:
+
+	- https://airporttransferservice.azurewebsites.net/airporttransfer.svc
+	- https://holidaybrokerservice.azurewebsites.net/holidaybroker.svc
+	- https://universitytermtimeservice.azurewebsites.net/universitytermtimes.svc
+
+If you wish to test the services locally it is important to disable the "HTTPS Only" for each service on Azure as
+it will automatically block HTTP connections from the local IIS server due to it not having SSL set up by default.
+Once the MyVacationWorkflow project has been updated to with the service references and tested on a local machine
+the whole process can be published to Azure using the same process as the other 3 services. My copy of this 
+service can be found at:
+
+	- https://myvacationwcfworkflow.azurewebsites.net/MyVacationWorkflow.xamlx
+

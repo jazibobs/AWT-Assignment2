@@ -1,0 +1,85 @@
+<Activity mc:Ignorable="sap2010 sads" x:Class="MyVacationWorkflow.AirportTransfer.Activities.GetCheapestTravelOption" this:GetCheapestTravelOption.EndpointConfigurationName="BasicHttpBinding_IAirportTransfer"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:ma="clr-namespace:MyVacationWorkflow.AirportTransfer;assembly=MyVacationWorkflow"
+ xmlns:ma1="clr-namespace:MyVacationWorkflow.AirportTransfer;assembly=MyVacationWorkflow, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+ xmlns:this="clr-namespace:MyVacationWorkflow.AirportTransfer.Activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="EndpointConfigurationName" Type="x:String">
+      <x:Property.Attributes>
+        <sc:DefaultValueAttribute>
+          <x:Arguments>
+            <x:String>BasicHttpBinding_IAirportTransfer</x:String>
+          </x:Arguments>
+        </sc:DefaultValueAttribute>
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="originCity" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="destinationCity" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="GetCheapestTravelOptionResult" Type="OutArgument(ma:TravelOption)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Sequence.Variables>
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IAirportTransfer/GetCheapestTravelOption" OperationName="GetCheapestTravelOption" ServiceContractName="p:IAirportTransfer">
+      <p1:Send.CorrelationInitializers>
+        <p1:RequestReplyCorrelationInitializer>
+          <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p1:CorrelationHandle">
+              <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p1:RequestReplyCorrelationInitializer>
+      </p1:Send.CorrelationInitializers>
+      <p1:SendMessageContent>
+        <InArgument x:TypeArguments="ma:GetCheapestTravelOptionRequest">[New MyVacationWorkflow.AirportTransfer.GetCheapestTravelOptionRequest() With { .originCity = originCity, .destinationCity = destinationCity }]</InArgument>
+      </p1:SendMessageContent>
+      <p1:Send.EndpointConfigurationName>
+        <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+      </p1:Send.EndpointConfigurationName>
+    </p1:Send>
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IAirportTransfer/GetCheapestTravelOptionResponse">
+      <p1:ReceiveMessageContent>
+        <OutArgument x:TypeArguments="ma:GetCheapestTravelOptionResponse">
+          <VariableReference x:TypeArguments="ma:GetCheapestTravelOptionResponse">
+            <VariableReference.Variable>
+              <Variable x:TypeArguments="ma:GetCheapestTravelOptionResponse" x:Name="__ReferenceID1" Name="tempResult_308a7b15b5ca41d393d3324a0967e3d5" />
+            </VariableReference.Variable>
+          </VariableReference>
+        </OutArgument>
+      </p1:ReceiveMessageContent>
+    </p1:ReceiveReply>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="ma:TravelOption">[GetCheapestTravelOptionResult]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="ma:TravelOption">[tempResult_308a7b15b5ca41d393d3324a0967e3d5.GetCheapestTravelOptionResult]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <sads:DebugSymbol.Symbol>d+wBQzpcVXNlcnNcSmFyZWRcT25lRHJpdmUgLSBESFNaXExlaWNlc3RlclxBZHZhbmNlZCBXZWIgVGVjaG5vbG9naWVzXGF3dC1hc3NpZ25tZW50MlxNeVZhY2F0aW9uV29ya2Zsb3dcTXlWYWNhdGlvbldvcmtmbG93XENvbm5lY3RlZCBTZXJ2aWNlc1xBaXJwb3J0VHJhbnNmZXJcTXlWYWNhdGlvbldvcmtmbG93LkFpcnBvcnRUcmFuc2Zlci5JQWlycG9ydFRyYW5zZmVyLkdldENoZWFwZXN0VHJhdmVsT3B0aW9uLnhhbWwJJgNUDgIBASsFPw8CAQpABUoXAgEHSwVSDgIBAjpJOtgBAgEMMA80HwIBC0MLRx8CAQlQN1CCAQIBBU04TVcCAQM=</sads:DebugSymbol.Symbol>
+  </Sequence>
+</Activity>

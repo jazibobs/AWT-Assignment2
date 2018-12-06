@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<this:GetHolidayDates this:EndpointConfigurationName="BasicHttpBinding_IUniversityTermTimes" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mu="clr-namespace:MyVacationWorkflow.UniversityTerm;assembly=MyVacationWorkflow, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:mu1="clr-namespace:MyVacationWorkflow.UniversityTerm;assembly=MyVacationWorkflow" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://tempuri.org/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:this="clr-namespace:MyVacationWorkflow.UniversityTerm.Activities;assembly=MyVacationWorkflow" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <this:GetHolidayDates.Implementation>
+    <Sequence>
+      <Sequence.Variables>
+        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
+      </Sequence.Variables>
+      <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IUniversityTermTimes/GetHolidayDates" OperationName="GetHolidayDates" ServiceContractName="p:IUniversityTermTimes">
+        <p1:Send.CorrelationInitializers>
+          <p1:RequestReplyCorrelationInitializer>
+            <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+              <InArgument x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+          </p1:RequestReplyCorrelationInitializer>
+        </p1:Send.CorrelationInitializers>
+        <p1:SendMessageContent>
+          <InArgument x:TypeArguments="mu1:GetHolidayDatesRequest">[New MyVacationWorkflow.UniversityTerm.GetHolidayDatesRequest() With { .university = university, .timeOfYear = timeOfYear }]</InArgument>
+        </p1:SendMessageContent>
+        <p1:Send.EndpointConfigurationName>
+          <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+        </p1:Send.EndpointConfigurationName>
+      </p1:Send>
+      <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IUniversityTermTimes/GetHolidayDatesResponse">
+        <p1:ReceiveMessageContent>
+          <OutArgument x:TypeArguments="mu1:GetHolidayDatesResponse">
+            <VariableReference x:TypeArguments="mu1:GetHolidayDatesResponse">
+              <VariableReference.Variable>
+                <Variable x:TypeArguments="mu1:GetHolidayDatesResponse" x:Name="__ReferenceID1" Name="tempResult_061f7c7c5222473f9ca5b8d20905aaa5" />
+              </VariableReference.Variable>
+            </VariableReference>
+          </OutArgument>
+        </p1:ReceiveMessageContent>
+      </p1:ReceiveReply>
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime[]">[GetHolidayDatesResult]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime[]">[tempResult_061f7c7c5222473f9ca5b8d20905aaa5.GetHolidayDatesResult]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <sads:DebugSymbol.Symbol>d+YBQzpcVXNlcnNcSmFyZWRcT25lRHJpdmUgLSBESFNaXExlaWNlc3RlclxBZHZhbmNlZCBXZWIgVGVjaG5vbG9naWVzXGF3dC1hc3NpZ25tZW50MlxNeVZhY2F0aW9uV29ya2Zsb3dcTXlWYWNhdGlvbldvcmtmbG93XENvbm5lY3RlZCBTZXJ2aWNlc1xVbml2ZXJzaXR5VGVybVxNeVZhY2F0aW9uV29ya2Zsb3cuVW5pdmVyc2l0eVRlcm0uSVVuaXZlcnNpdHlUZXJtVGltZXMuR2V0SG9saWRheURhdGVzLnhhbWwJJgNUDgIBASsFPw8CAQpABUoXAgEHSwVSDgIBAjpCOr4BAgEMMA80HwIBC0MLRx8CAQlQNFB3AgEFTTVNTAIBAw==</sads:DebugSymbol.Symbol>
+    </Sequence>
+  </this:GetHolidayDates.Implementation>
+</this:GetHolidayDates>

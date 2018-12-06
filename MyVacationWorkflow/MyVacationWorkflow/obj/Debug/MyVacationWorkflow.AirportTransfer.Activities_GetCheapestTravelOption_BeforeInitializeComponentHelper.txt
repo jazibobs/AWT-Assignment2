@@ -1,0 +1,2 @@
+MyVacationWorkflow.AirportTransfer.IAirportTransfer.GetCheapestTravelOption.g.xaml
+XamlStaticHelperNamespace._XamlStaticHelper

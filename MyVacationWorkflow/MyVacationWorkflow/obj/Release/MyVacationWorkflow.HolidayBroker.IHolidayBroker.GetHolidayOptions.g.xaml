@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<this:GetHolidayOptions this:EndpointConfigurationName="BasicHttpBinding_IHolidayBroker" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mh="clr-namespace:MyVacationWorkflow.HolidayBroker;assembly=MyVacationWorkflow" xmlns:mh1="clr-namespace:MyVacationWorkflow.HolidayBroker;assembly=MyVacationWorkflow, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://tempuri.org/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:this="clr-namespace:MyVacationWorkflow.HolidayBroker.Activities;assembly=MyVacationWorkflow" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <this:GetHolidayOptions.Implementation>
+    <Sequence>
+      <Sequence.Variables>
+        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
+      </Sequence.Variables>
+      <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IHolidayBroker/GetHolidayOptions" OperationName="GetHolidayOptions" ServiceContractName="p:IHolidayBroker">
+        <p1:Send.CorrelationInitializers>
+          <p1:RequestReplyCorrelationInitializer>
+            <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+              <InArgument x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+          </p1:RequestReplyCorrelationInitializer>
+        </p1:Send.CorrelationInitializers>
+        <p1:SendMessageContent>
+          <InArgument x:TypeArguments="mh:GetHolidayOptionsRequest">[New MyVacationWorkflow.HolidayBroker.GetHolidayOptionsRequest() With { .startDate = startDate, .endDate = endDate, .budget = budget }]</InArgument>
+        </p1:SendMessageContent>
+        <p1:Send.EndpointConfigurationName>
+          <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+        </p1:Send.EndpointConfigurationName>
+      </p1:Send>
+      <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IHolidayBroker/GetHolidayOptionsResponse">
+        <p1:ReceiveMessageContent>
+          <OutArgument x:TypeArguments="mh:GetHolidayOptionsResponse">
+            <VariableReference x:TypeArguments="mh:GetHolidayOptionsResponse">
+              <VariableReference.Variable>
+                <Variable x:TypeArguments="mh:GetHolidayOptionsResponse" x:Name="__ReferenceID1" Name="tempResult_e512b9ab82054be48bf0a47dcb5147f5" />
+              </VariableReference.Variable>
+            </VariableReference>
+          </OutArgument>
+        </p1:ReceiveMessageContent>
+      </p1:ReceiveReply>
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="mh:Holiday[]">[GetHolidayOptionsResult]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="mh:Holiday[]">[tempResult_e512b9ab82054be48bf0a47dcb5147f5.GetHolidayOptionsResult]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <sads:DebugSymbol.Symbol>9xDI4hzWNOW3d1h53zQeZz6K4AFDOlxVc2Vyc1xKYXJlZFxPbmVEcml2ZSAtIERIU1pcTGVpY2VzdGVyXEFkdmFuY2VkIFdlYiBUZWNobm9sb2dpZXNcYXd0LWFzc2lnbm1lbnQyXE15VmFjYXRpb25Xb3JrZmxvd1xNeVZhY2F0aW9uV29ya2Zsb3dcQ29ubmVjdGVkIFNlcnZpY2VzXEhvbGlkYXlCcm9rZXJcTXlWYWNhdGlvbldvcmtmbG93LkhvbGlkYXlCcm9rZXIuSUhvbGlkYXlCcm9rZXIuR2V0SG9saWRheU9wdGlvbnMueGFtbAksA1oOAgEBMQVFDwIBCkYFUBcCAQdRBVgOAgECQENAygECAQw2DzofAgELSQtNHwIBCVY0VnkCAQVTNVNOAgED</sads:DebugSymbol.Symbol>
+    </Sequence>
+  </this:GetHolidayOptions.Implementation>
+</this:GetHolidayOptions>

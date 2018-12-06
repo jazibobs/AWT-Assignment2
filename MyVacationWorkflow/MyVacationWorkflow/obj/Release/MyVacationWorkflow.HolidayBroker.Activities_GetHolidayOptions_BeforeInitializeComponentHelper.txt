@@ -1,0 +1,2 @@
+MyVacationWorkflow.HolidayBroker.IHolidayBroker.GetHolidayOptions.g.xaml
+XamlStaticHelperNamespace._XamlStaticHelper
